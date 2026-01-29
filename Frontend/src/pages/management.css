@@ -1,0 +1,130 @@
+/* management.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.management-page-container {
+    padding: 20px; /* or padding: 0 20px 20px 20px; */
+    width: 100%;
+    box-sizing: border-box;
+
+    /* --- Add these two lines --- */
+    position: relative;
+    top: -20px;
+}
+.management-section {
+    margin-bottom: 40px; /* Adds space between sections */
+}
+
+.management-section h2 {
+    color: #333;
+    margin-top: 0; /* <-- Add this line */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+/* This is the new flex container for the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Helper messages for loading, error, and empty states */
+.info-message, .error-message {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    width: 100%;
+    text-align: left;
+}
+
+.error-message {
+    color: #d9534f; /* Bootstrap's danger color */
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    min-height: 300px; /* Replaced fixed height with min-height */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border-radius: 12px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Removed unused .card img rule */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Allows content to fill the card */
+    flex-grow: 1; /* Pushes button-group to the bottom */
+}
+
+.description {
+    font-size: 16px;
+    margin: 5px 0;
+    text-align: left;
+    word-break: break-word;
+}
+
+/* This makes the description fields take up the available space,
+   pushing the buttons to the bottom consistently */
+.description:last-of-type {
+    flex-grow: 1;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px; /* Provides space above buttons */
+    gap: 10px; /* Adds space between buttons */
+    width: 100%;
+}
+
+.accept, .decline {
+    flex: 1; /* Makes buttons equal width */
+    padding: 10px; /* Increased padding for better click target */
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.accept {
+    background-color: #28a745; /* Green */
+}
+.accept:hover {
+    background-color: #218838;
+}
+
+.decline {
+    background-color: #dc3545; /* Red */
+}
+.decline:hover {
+    background-color: #c82333;
+}
+
+/* --- Removed Unused Classes --- */
+/* .status-btn, .first, .donate, .pending-btn were removed
+   as they were not used in the JSX */

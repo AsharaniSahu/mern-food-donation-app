@@ -1,0 +1,269 @@
+/* Base Styles */
+.about-us-page {
+  margin-top: 25rem;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* Fixed Navbar */
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+/* Main Content */
+.main-content {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .main-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+@media (min-width: 640px) {
+  .page-title {
+    font-size: 3rem;
+  }
+}
+
+.page-subtitle {
+  margin-top: 1rem;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+
+/* Mission Section */
+.mission-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.mission-content {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.mission-text {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+/* Founders Section */
+.founders-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .founders-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.founder-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.founder-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.founder-avatar {
+  width: 8rem;
+  height: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.founder-avatar-blue {
+  background-color: #dbeafe;
+}
+
+.founder-avatar-green {
+  background-color: #dcfce7;
+}
+
+.founder-avatar-purple {
+  background-color: #f3e8ff;
+}
+
+.founder-initials {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.founder-avatar-blue .founder-initials {
+  color: #2563eb;
+}
+
+.founder-avatar-green .founder-initials {
+  color: #16a34a;
+}
+
+.founder-avatar-purple .founder-initials {
+  color: #9333ea;
+}
+
+.founder-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.founder-role {
+  color: #4b5563;
+}
+
+.founder-description {
+  margin-top: 1rem;
+  color: #6b7280;
+}
+
+/* Values Section */
+.values-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.value-icon {
+  width: 5rem;
+  height: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value-icon-blue {
+  background-color: #dbeafe;
+}
+
+.value-icon-green {
+  background-color: #dcfce7;
+}
+
+.value-icon-purple {
+  background-color: #f3e8ff;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.value-icon-blue .icon {
+  color: #2563eb;
+}
+
+.value-icon-green .icon {
+  color: #16a34a;
+}
+
+.value-icon-purple .icon {
+  color: #9333ea;
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.value-description {
+  color: #4b5563;
+}

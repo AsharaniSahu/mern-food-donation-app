@@ -1,0 +1,57 @@
+/* Center the logout container on the page */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px; /* Adjust this to the navbar height */
+}
+
+.logout-container {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeInUp 0.6s ease;
+}
+
+.logout-container h2 {
+  color: #222;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.logout-container a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #016DA3;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.logout-container a:hover {
+  background-color: #024f75;
+  transform: scale(1.05);
+}
+
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
