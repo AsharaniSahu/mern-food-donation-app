@@ -1,23 +1,31 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
-def test_login():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
+public class LoginTest {
 
-    driver.get("https://practicetestautomation.com/practice-test-login/")
+    @Test
+    public void validLoginTest() {
 
-    username = driver.find_element(By.ID, "username")
-    password = driver.find_element(By.ID, "password")
-    submit = driver.find_element(By.ID, "submit")
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
 
-    username.send_keys("student")
-    password.send_keys("Password123")
-    submit.click()
+        driver.manage().window().maximize();
 
-    time.sleep(3)
+        driver.get("https://practicetestautomation.com/practice-test-login/");
 
-    assert "Logged In Successfully" in driver.page_source
+        driver.findElement(By.id("username")).sendKeys("student");
+        driver.findElement(By.id("password")).sendKeys("Password123");
+        driver.findElement(By.id("submit")).click();
 
-    driver.quit()
+        String expectedText = "Logged In Successfully";
+        String pageText = driver.getPageSource();
+
+        Assert.assertTrue(pageText.contains(expectedText));
+
+        driver.quit();
+    }
+}
