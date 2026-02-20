@@ -1,25 +1,68 @@
-<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <!-- Selenium -->
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>4.18.1</version>
-    </dependency>
+    <modelVersion>4.0.0</modelVersion>
 
-    <!-- WebDriverManager -->
-    <dependency>
-        <groupId>io.github.bonigarcia</groupId>
-        <artifactId>webdrivermanager</artifactId>
-        <version>5.8.0</version>
-    </dependency>
+    <groupId>com.exp4</groupId>
+    <artifactId>exp4</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-    <!-- TestNG -->
-    <dependency>
-        <groupId>org.testng</groupId>
-        <artifactId>testng</artifactId>
-        <version>7.9.0</version>
-        <scope>test</scope>
-    </dependency>
+    <name>exp4</name>
 
-</dependencies>
+    <dependencies>
+
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.18.1</version>
+        </dependency>
+
+        <!-- WebDriverManager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.8.0</version>
+        </dependency>
+
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.9.0</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Surefire Plugin for TestNG -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
