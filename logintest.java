@@ -6,21 +6,25 @@ import org.testng.annotations.Test;
 
 public class LoginTest {
 
-    @Test
-    public void validLoginTest() {
+    @Test
+    public void validLoginTest() {
 
-        WebDriver driver = new ChromeDriver();
-driver.manage().window().maximize();
-        driver.get("https:/mealcircle.com/practice-test-login/");   
-  driver.findElement(By.id("username")).sendKeys("student");
-        driver.findElement(By.id("password")).sendKeys("Password123");
-        driver.findElement(By.id("submit")).click();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
 
-        String expectedText = "Logged In Successfully";
-        String pageText = driver.getPageSource();
+        // YOUR APP URL
+        driver.get("http://localhost:8081");
 
-        Assert.assertTrue(pageText.contains(expectedText));
+        // CHANGE THESE BASED ON YOUR HTML
+        driver.findElement(By.id("username")).sendKeys("testuser");
+        driver.findElement(By.id("password")).sendKeys("test123");
+        driver.findElement(By.id("submit")).click();
 
-        driver.quit();
-    }
+        // Example validation (change accordingly)
+        String pageText = driver.getPageSource();
+
+        Assert.assertTrue(pageText.contains("Welcome"));
+
+        driver.quit();
+    }
 }
