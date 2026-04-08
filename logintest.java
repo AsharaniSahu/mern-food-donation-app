@@ -12,23 +12,23 @@ public class LoginTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        // Your app
-        driver.get("http://localhost:8081");
+        // ✅ Correct working demo website
+        driver.get("https://practicetestautomation.com/practice-test-login/");
 
         // Enter credentials
-        driver.findElement(By.id("username")).sendKeys("testuser");
-        driver.findElement(By.id("password")).sendKeys("test123");
+        driver.findElement(By.id("username")).sendKeys("student");
+        driver.findElement(By.id("password")).sendKeys("Password123");
 
-        // Click login button (using class)
-        driver.findElement(By.className("login-btn")).click();
+        // Click login
+        driver.findElement(By.id("submit")).click();
 
-        // Wait (important for page load)
+        // Wait for page to load
         try { Thread.sleep(3000); } catch (Exception e) {}
 
-        // Validation (CHANGE THIS BASED ON YOUR APP)
+        // Validation
         String pageText = driver.getPageSource();
 
-        Assert.assertTrue(pageText.contains("Welcome"));
+        Assert.assertTrue(pageText.contains("Logged In Successfully"));
 
         driver.quit();
     }
