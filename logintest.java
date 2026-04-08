@@ -12,15 +12,20 @@ public class LoginTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        // YOUR APP URL
+        // Your app
         driver.get("http://localhost:8081");
 
-        // CHANGE THESE BASED ON YOUR HTML
+        // Enter credentials
         driver.findElement(By.id("username")).sendKeys("testuser");
         driver.findElement(By.id("password")).sendKeys("test123");
-        driver.findElement(By.id("submit")).click();
 
-        // Example validation (change accordingly)
+        // Click login button (using class)
+        driver.findElement(By.className("login-btn")).click();
+
+        // Wait (important for page load)
+        try { Thread.sleep(3000); } catch (Exception e) {}
+
+        // Validation (CHANGE THIS BASED ON YOUR APP)
         String pageText = driver.getPageSource();
 
         Assert.assertTrue(pageText.contains("Welcome"));
