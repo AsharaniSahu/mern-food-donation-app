@@ -1,2 +1,5 @@
 FROM nginx
-COPY . /usr/share/nginx/html
+
+COPY Frontend/dist /usr/share/nginx/html
+
+EXPOSE 80
